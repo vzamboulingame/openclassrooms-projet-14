@@ -17,8 +17,8 @@ export default function Home(): JSX.Element {
           src={bannerImage}
           alt="Hero Image"
         />
-        <h2 className="text-center text-8xl font-bold">Welcome to HRNet</h2>
-        <p className="mt-8 text-center text-3xl">
+        <h2 className="text-center text-7xl font-bold">Welcome to HRNet</h2>
+        <p className="mt-8 text-center text-4xl">
           Your one-stop solution for managing employees.
         </p>
       </section>
