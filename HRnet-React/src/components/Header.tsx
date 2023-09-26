@@ -1,5 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 
+/**
+ * Creates and renders the Header component.
+ *
+ * @return {JSX.Element} The rendered Header component.
+ */
 export default function Header(): JSX.Element {
   return (
     <header className="flex h-24 items-center justify-between px-16 py-4 text-neutral-900">

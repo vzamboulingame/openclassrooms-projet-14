@@ -4,9 +4,9 @@ import Footer from "../components/Footer";
 import errorImg from "../assets/error.jpg";
 
 /**
- * Renders the NotFound component.
+ * Creates and renders the NotFound component.
  *
- * @return {JSX.Element} The rendered CreateEmployee component.
+ * @return {JSX.Element} The rendered NotFound component.
  */
 export default function NotFound(): JSX.Element {
   return (

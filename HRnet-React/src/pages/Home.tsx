@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import bannerImage from "../assets/banner.jpg";
 
 /**
- * Renders the Home component.
+ * Creates and renders the Home component.
  *
  * @return {JSX.Element} The rendered Home component.
  */
