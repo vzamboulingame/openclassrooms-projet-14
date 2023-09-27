@@ -30,14 +30,22 @@ export default function Header(): JSX.Element {
 
       <nav className="flex justify-between gap-8 text-xl">
         <NavLink
-          className="transition duration-150 hover:text-blue-500 hover:underline"
+          className={({ isActive }) =>
+            `transition duration-150 hover:text-blue-500 hover:underline ${
+              isActive && "text-blue-500"
+            }`
+          }
           to="/employee/list"
         >
           Employee list
         </NavLink>
 
         <NavLink
-          className="transition duration-150 hover:text-blue-500 hover:underline"
+          className={({ isActive }) =>
+            `transition duration-150 hover:text-blue-500 hover:underline ${
+              isActive && "text-blue-500"
+            }`
+          }
           to="/employee/create"
         >
           Add employee
