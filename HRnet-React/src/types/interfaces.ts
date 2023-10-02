@@ -1,12 +1,14 @@
+import { StateOptions, DepartmentOptions } from "./enums";
+
 export interface EmployeeData {
   firstName: string;
   lastName: string;
   dateOfBirth: string;
   street: string;
   city: string;
-  state: string;
+  state: StateOptions;
   zipCode: string;
-  department: string;
+  department: DepartmentOptions;
   startDate: string;
 }
 
