@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useEmployeeStore } from "../utils/store";
 import { EmployeeData } from "../types/interfaces";
+import { StateOptions, DepartmentOptions } from "../types/enums";
 
 /**
  * Creates and renders the CreateEmployee component.
@@ -101,57 +102,9 @@ export default function CreateEmployee(): JSX.Element {
                 required
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               >
-                <option>Alabama</option>
-                <option>Alaska</option>
-                <option>Arizona</option>
-                <option>Arkansas</option>
-                <option>California</option>
-                <option>Colorado</option>
-                <option>Connecticut</option>
-                <option>Delaware</option>
-                <option>District Of Columbia</option>
-                <option>Florida</option>
-                <option>Georgia</option>
-                <option>Hawaii</option>
-                <option>Idaho</option>
-                <option>Illinois</option>
-                <option>Indiana</option>
-                <option>Iowa</option>
-                <option>Kansas</option>
-                <option>Kentucky</option>
-                <option>Louisiana</option>
-                <option>Maine</option>
-                <option>Maryland</option>
-                <option>Massachusetts</option>
-                <option>Michigan</option>
-                <option>Minnesota</option>
-                <option>Mississippi</option>
-                <option>Missouri</option>
-                <option>Montana</option>
-                <option>Nebraska</option>
-                <option>Nevada</option>
-                <option>New Hampshire</option>
-                <option>New Jersey</option>
-                <option>New Mexico</option>
-                <option>New York</option>
-                <option>North Carolina</option>
-                <option>North Dakota</option>
-                <option>Ohio</option>
-                <option>Oklahoma</option>
-                <option>Oregon</option>
-                <option>Pennsylvania</option>
-                <option>Rhode Island</option>
-                <option>South Carolina</option>
-                <option>South Dakota</option>
-                <option>Tennessee</option>
-                <option>Texas</option>
-                <option>Utah</option>
-                <option>Vermont</option>
-                <option>Virginia</option>
-                <option>Washington</option>
-                <option>West Virginia</option>
-                <option>Wisconsin</option>
-                <option>Wyoming</option>
+                {Object.values(StateOptions).map((stateOption) => (
+                  <option key={stateOption}>{stateOption}</option>
+                ))}
               </select>
             </div>
 
@@ -160,16 +113,14 @@ export default function CreateEmployee(): JSX.Element {
                 Department
               </label>
               <select
-                id="department"
                 name="department"
+                id="department"
                 required
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               >
-                <option>Sales</option>
-                <option>Marketing</option>
-                <option>Engineering</option>
-                <option>Human Resources</option>
-                <option>Legal</option>
+                {Object.values(DepartmentOptions).map((departmentOption) => (
+                  <option key={departmentOption}>{departmentOption}</option>
+                ))}
               </select>
             </div>
           </div>
