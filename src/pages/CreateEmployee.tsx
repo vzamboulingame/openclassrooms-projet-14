@@ -1,8 +1,10 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { useState } from "react";
 import { useEmployeeStore } from "../utils/store";
 import { EmployeeData } from "../types/interfaces";
 import { StateOptions, DepartmentOptions } from "../types/enums";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Modal from "vz-react-modal";
 
 /**
  * Creates and renders the CreateEmployee component.
@@ -11,6 +13,16 @@ import { StateOptions, DepartmentOptions } from "../types/enums";
  */
 export default function CreateEmployee(): JSX.Element {
   const { addEmployeeData } = useEmployeeStore();
+
+  const [modalMessage, setModalMessage] = useState("");
+  const [modalType, setModalType] = useState<
+    "basic" | "info" | "success" | "warning" | "error"
+  >("basic");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -30,11 +42,15 @@ export default function CreateEmployee(): JSX.Element {
         startDate: form.startDate.value,
       };
 
-      // Store the employee data to the employeeDataArray
       addEmployeeData(formData);
 
-      // Clear the form after adding data to the employeeDataArray
       form.reset();
+
+      setModalMessage("Employee added successfully !");
+
+      setModalType("info");
+
+      setIsModalOpen(true);
     }
   }
 
@@ -191,6 +207,13 @@ export default function CreateEmployee(): JSX.Element {
             </button>
           </div>
         </form>
+        <Modal
+          modalTitle="HRnet"
+          modalMessage={modalMessage}
+          modalType={modalType}
+          isOpen={isModalOpen}
+          handleClose={handleClose}
+        />
       </section>
       <Footer />
     </div>
