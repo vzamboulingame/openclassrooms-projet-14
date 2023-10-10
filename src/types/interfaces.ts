@@ -1,6 +1,7 @@
 import { StateOptions, DepartmentOptions } from "./enums";
 
 export interface EmployeeData {
+  id: string;
   firstName: string;
   lastName: string;
   dateOfBirth: string;

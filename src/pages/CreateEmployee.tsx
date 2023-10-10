@@ -30,7 +30,10 @@ export default function CreateEmployee(): JSX.Element {
     const form = e.currentTarget as HTMLFormElement;
 
     if (form.checkValidity()) {
+      const uuid = self.crypto.randomUUID();
+
       const formData: EmployeeData = {
+        id: uuid,
         firstName: form.firstName.value,
         lastName: form.lastName.value,
         dateOfBirth: form.dateOfBirth.value,
