@@ -46,7 +46,7 @@ export default function EmployeeList(): JSX.Element {
       field: "street",
       headerName: "Street",
       sortable: true,
-      width: 200,
+      width: 250,
     },
     {
       field: "zipCode",
@@ -70,7 +70,7 @@ export default function EmployeeList(): JSX.Element {
       field: "department",
       headerName: "Department",
       sortable: true,
-      width: 150,
+      width: 200,
     },
     {
       field: "startDate",
@@ -83,11 +83,12 @@ export default function EmployeeList(): JSX.Element {
   return (
     <div>
       <Header />
-      <section className="flex min-h-[calc(100vh-12rem)] flex-col items-center text-neutral-900 ">
-        <h1 className="mb-8 text-center text-2xl">Current Employees</h1>
+      <section className="flex min-h-[calc(100vh-12rem)] w-full flex-col items-center gap-y-16 text-neutral-900 ">
+        <h1 className="text-3xl text-gray-700">Current Employees</h1>
         <div className="flex flex-col">
           <DataGrid
             sx={{
+              fontSize: "1rem",
               padding: "1em",
               [`& .${gridClasses.cell}:focus, & .${gridClasses.cell}:focus-within`]:
                 {

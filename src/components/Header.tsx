@@ -13,7 +13,7 @@ export default function Header(): JSX.Element {
         to="/"
       >
         <svg
-          className="h-6 w-6"
+          className="h-8 w-8"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="none"
@@ -25,10 +25,10 @@ export default function Header(): JSX.Element {
           <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
           <polyline points="9 22 9 12 15 12 15 22"></polyline>
         </svg>
-        <h1 className="text-2xl font-bold">HRNet</h1>
+        <h1 className="text-4xl font-bold">HRNet</h1>
       </Link>
 
-      <nav className="flex justify-between gap-8 text-xl">
+      <nav className="flex justify-between gap-8 text-2xl">
         <NavLink
           className={({ isActive }) =>
             `transition duration-150 hover:text-blue-500 hover:underline ${

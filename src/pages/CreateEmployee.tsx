@@ -61,7 +61,7 @@ export default function CreateEmployee(): JSX.Element {
     <div>
       <Header />
       <section className="flex min-h-[calc(100vh-12rem)] w-full flex-col items-center gap-y-16 text-neutral-900 ">
-        <h2 className="text-3xl text-gray-700">Add Employee</h2>
+        <h1 className="text-3xl text-gray-700">Add Employee</h1>
 
         <form
           className="flex flex-row justify-between gap-x-16"
