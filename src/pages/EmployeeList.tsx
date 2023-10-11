@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { useEmployeeStore } from "../utils/store";
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import {
+  DataGrid,
+  GridColDef,
+  GridToolbar,
+  gridClasses,
+} from "@mui/x-data-grid";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -82,11 +87,40 @@ export default function EmployeeList(): JSX.Element {
         <h1 className="mb-8 text-center text-2xl">Current Employees</h1>
         <div className="flex flex-col">
           <DataGrid
+            sx={{
+              padding: "1em",
+              [`& .${gridClasses.cell}:focus, & .${gridClasses.cell}:focus-within`]:
+                {
+                  outline: "none",
+                },
+              [`& .${gridClasses.columnHeader}:focus, & .${gridClasses.columnHeader}:focus-within`]:
+                {
+                  outline: "none",
+                },
+            }}
+            density="comfortable"
             rows={employeeDataArray}
             columns={columns}
             paginationModel={paginationModel}
             onPaginationModelChange={setPaginationModel}
             pageSizeOptions={[5, 10, 25]}
+            disableColumnFilter
+            disableColumnSelector
+            disableDensitySelector
+            initialState={{
+              filter: {
+                filterModel: {
+                  items: [],
+                  quickFilterExcludeHiddenColumns: true,
+                },
+              },
+            }}
+            slots={{ toolbar: GridToolbar }}
+            slotProps={{
+              toolbar: {
+                showQuickFilter: true,
+              },
+            }}
           />
         </div>
       </section>
