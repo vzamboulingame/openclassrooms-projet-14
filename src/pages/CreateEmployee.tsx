@@ -60,155 +60,154 @@ export default function CreateEmployee(): JSX.Element {
   return (
     <div>
       <Header />
-      <section className="flex min-h-[calc(100vh-12rem)] w-full flex-col items-center gap-y-16 text-neutral-900 ">
-        <h1 className="text-3xl text-gray-700">Add Employee</h1>
+      <section className="flex min-h-[calc(100vh-12rem)] flex-col items-center gap-y-16 text-neutral-900 sm:gap-y-8 sm:py-8">
+        <h1 className="mt-4 text-3xl text-gray-700 sm:hidden md:text-xl lg:text-2xl">
+          Add Employee
+        </h1>
 
         <form
-          className="flex flex-row justify-between gap-x-16"
+          className="grid grid-cols-2 items-center gap-x-12 gap-y-6 sm:grid-cols-1 sm:gap-x-0 sm:gap-y-4"
           onSubmit={handleSubmit}
         >
-          <div className="flex flex-col gap-y-6">
-            <div>
-              <label htmlFor="firstName" className="block text-gray-700">
-                First name
-              </label>
-              <input
-                id="firstName"
-                name="firstName"
-                type="text"
-                minLength={2}
-                pattern="(?!^ +$)^.+$"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="dateOfBirth" className="block text-gray-700">
-                Date of birth
-              </label>
-              <input
-                id="dateOfBirth"
-                name="dateOfBirth"
-                type="date"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="street" className="block text-gray-700">
-                Street
-              </label>
-              <input
-                id="street"
-                name="street"
-                type="text"
-                minLength={2}
-                pattern="(?!^ +$)^.+$"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
-            </div>
-
-            <div>
-              <label htmlFor="state" className="block text-gray-700">
-                State
-              </label>
-              <select
-                name="state"
-                id="state"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              >
-                {Object.values(StateOptions).map((stateOption) => (
-                  <option key={stateOption}>{stateOption}</option>
-                ))}
-              </select>
-            </div>
-
-            <div>
-              <label htmlFor="department" className="block text-gray-700">
-                Department
-              </label>
-              <select
-                name="department"
-                id="department"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              >
-                {Object.values(DepartmentOptions).map((departmentOption) => (
-                  <option key={departmentOption}>{departmentOption}</option>
-                ))}
-              </select>
-            </div>
+          <div>
+            <label htmlFor="firstName" className="block text-gray-700">
+              First name
+            </label>
+            <input
+              id="firstName"
+              name="firstName"
+              type="text"
+              minLength={2}
+              pattern="(?!^ +$)^.+$"
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            />
           </div>
 
-          <div className="flex flex-col gap-y-6">
-            <div>
-              <label htmlFor="lastName" className="block text-gray-700">
-                Last name
-              </label>
-              <input
-                id="lastName"
-                name="lastName"
-                type="text"
-                minLength={2}
-                pattern="(?!^ +$)^.+$"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
-            </div>
+          <div>
+            <label htmlFor="lastName" className="block text-gray-700">
+              Last name
+            </label>
+            <input
+              id="lastName"
+              name="lastName"
+              type="text"
+              minLength={2}
+              pattern="(?!^ +$)^.+$"
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            />
+          </div>
 
-            <div>
-              <label htmlFor="startDate" className="block text-gray-700">
-                Start date
-              </label>
-              <input
-                id="startDate"
-                name="startDate"
-                type="date"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
-            </div>
+          <div>
+            <label htmlFor="dateOfBirth" className="block text-gray-700">
+              Date of birth
+            </label>
+            <input
+              id="dateOfBirth"
+              name="dateOfBirth"
+              type="date"
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            />
+          </div>
 
-            <div>
-              <label htmlFor="city" className="block text-gray-700">
-                City
-              </label>
-              <input
-                id="city"
-                name="city"
-                type="text"
-                minLength={2}
-                pattern="(?!^ +$)^.+$"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
-            </div>
+          <div>
+            <label htmlFor="startDate" className="block text-gray-700">
+              Start date
+            </label>
+            <input
+              id="startDate"
+              name="startDate"
+              type="date"
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            />
+          </div>
 
-            <div>
-              <label htmlFor="zipCode" className="block text-gray-700">
-                Zip Code
-              </label>
-              <input
-                id="zipCode"
-                name="zipCode"
-                type="text"
-                minLength={2}
-                pattern="(?!^ +$)^.+$"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-              />
-            </div>
-            <button
-              type="submit"
-              className="mt-4 rounded bg-blue-500 px-4 py-4 font-bold text-white hover:bg-blue-700"
+          <div>
+            <label htmlFor="street" className="block text-gray-700">
+              Street
+            </label>
+            <input
+              id="street"
+              name="street"
+              type="text"
+              minLength={2}
+              pattern="(?!^ +$)^.+$"
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="zipCode" className="block text-gray-700">
+              Zip Code
+            </label>
+            <input
+              id="zipCode"
+              name="zipCode"
+              type="text"
+              minLength={2}
+              pattern="(?!^ +$)^.+$"
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="city" className="block text-gray-700">
+              City
+            </label>
+            <input
+              id="city"
+              name="city"
+              type="text"
+              minLength={2}
+              pattern="(?!^ +$)^.+$"
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="state" className="block text-gray-700">
+              State
+            </label>
+            <select
+              name="state"
+              id="state"
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
             >
-              Submit
-            </button>
+              {Object.values(StateOptions).map((stateOption) => (
+                <option key={stateOption}>{stateOption}</option>
+              ))}
+            </select>
           </div>
+
+          <div>
+            <label htmlFor="department" className="block text-gray-700">
+              Department
+            </label>
+            <select
+              name="department"
+              id="department"
+              required
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            >
+              {Object.values(DepartmentOptions).map((departmentOption) => (
+                <option key={departmentOption}>{departmentOption}</option>
+              ))}
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            className="mt-4 rounded bg-blue-500 px-4 py-4 font-bold text-white hover:bg-blue-700"
+          >
+            Submit
+          </button>
         </form>
         <Modal
           modalTitle="HRnet"
