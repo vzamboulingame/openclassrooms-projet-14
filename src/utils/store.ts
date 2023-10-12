@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { EmployeeStore } from "../types/interfaces";
 import { devtools, persist } from "zustand/middleware";
 import { StateOptions, DepartmentOptions } from "../types/enums";
-import { faker } from "@faker-js/faker";
+import { faker } from "@faker-js/faker/locale/en_US";
 
 const shouldInitializeData = !localStorage.getItem("hasInitializedData");
 
