@@ -18,9 +18,11 @@ export default function NotFound(): JSX.Element {
           src={errorImg}
           alt="404 Error Image"
         />
-        <p className="text-center text-7xl">Page not found !</p>
+        <p className="text-center text-7xl sm:text-4xl md:text-5xl lg:text-6xl">
+          Page not found !
+        </p>
         <Link
-          className="mt-16 text-3xl transition duration-150 hover:text-blue-500 hover:underline"
+          className="mt-16 text-4xl transition duration-150 hover:text-blue-500 hover:underline sm:mt-4 sm:text-xl md:text-2xl lg:text-3xl"
           to="/"
         >
           Back to homepage
