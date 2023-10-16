@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEmployeeStore } from "../utils/store";
+import { Box, useMediaQuery } from "@mui/material";
 import {
   DataGrid,
   GridColDef,
@@ -21,6 +22,9 @@ export default function EmployeeList(): JSX.Element {
     pageSize: 5,
     page: 0,
   });
+
+  // Define a breakpoint for mobile
+  const isMobile = useMediaQuery("(max-width:639px)");
 
   // Define the columns based on EmployeeData interface
   const columns: GridColDef[] = [
@@ -83,12 +87,14 @@ export default function EmployeeList(): JSX.Element {
   return (
     <div>
       <Header />
-      <section className="flex min-h-[calc(100vh-12rem)] w-full flex-col items-center gap-y-16 text-neutral-900 ">
-        <h1 className="text-3xl text-gray-700">Current Employees</h1>
-        <div className="flex flex-col">
+      <section className="flex min-h-[calc(100vh-12rem)] w-full flex-col items-center gap-y-16 text-neutral-900">
+        <h1 className="mt-4 text-3xl text-gray-700 lg:text-2xl md:text-xl sm:hidden">
+          Current Employees
+        </h1>
+        <Box className="xl:w-full xl:max-w-full">
           <DataGrid
             sx={{
-              fontSize: "1rem",
+              fontSize: isMobile ? "0.9rem" : "1rem",
               padding: "1em",
               [`& .${gridClasses.cell}:focus, & .${gridClasses.cell}:focus-within`]:
                 {
@@ -98,6 +104,8 @@ export default function EmployeeList(): JSX.Element {
                 {
                   outline: "none",
                 },
+              // Conditionally set border style to 'none' on mobile
+              border: isMobile ? "none" : "1px solid #e0e0e0",
             }}
             density="comfortable"
             rows={employeeDataArray}
@@ -123,7 +131,7 @@ export default function EmployeeList(): JSX.Element {
               },
             }}
           />
-        </div>
+        </Box>
       </section>
       <Footer />
     </div>

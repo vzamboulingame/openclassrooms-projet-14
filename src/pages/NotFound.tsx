@@ -12,17 +12,18 @@ export default function NotFound(): JSX.Element {
   return (
     <div>
       <Header />
-      <section className="flex min-h-[calc(100vh-12rem)] flex-col items-center text-neutral-900 ">
+      <section className="flex min-h-[calc(100vh-12rem)] flex-col items-center justify-center gap-y-12 text-neutral-900 xl:gap-y-10 md:gap-y-8 sm:gap-y-4">
         <img
-          className="h-full max-h-[60vh] object-scale-down"
+          className="h-full max-h-[60vh] w-full object-scale-down"
           src={errorImg}
           alt="404 Error Image"
+          loading="lazy"
         />
-        <p className="text-center text-7xl sm:text-4xl md:text-5xl lg:text-6xl">
+        <h1 className="text-center text-7xl font-bold lg:text-6xl md:text-5xl sm:text-4xl">
           Page not found !
-        </p>
+        </h1>
         <Link
-          className="mt-16 text-4xl transition duration-150 hover:text-blue-500 hover:underline sm:mt-4 sm:text-xl md:text-2xl lg:text-3xl"
+          className="text-4xl transition duration-150 hover:text-blue-500 hover:underline lg:text-3xl md:text-2xl sm:text-xl"
           to="/"
         >
           Back to homepage

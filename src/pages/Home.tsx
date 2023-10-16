@@ -11,16 +11,17 @@ export default function Home(): JSX.Element {
   return (
     <div>
       <Header />
-      <section className="flex min-h-[calc(100vh-12rem)] flex-col items-center justify-center gap-y-16 py-4 text-neutral-900 sm:gap-y-6 sm:py-2 lg:gap-y-10">
+      <section className="flex min-h-[calc(100vh-12rem)] flex-col items-center justify-center gap-y-12 text-neutral-900 xl:gap-y-10 md:gap-y-8 sm:gap-y-4">
         <img
-          className="h-full max-h-[50vh] object-scale-down"
+          className="h-full max-h-[60vh] w-full object-scale-down"
           src={bannerImage}
           alt="Banner Image"
+          loading="lazy"
         />
-        <h2 className="text-center text-7xl font-bold sm:mt-2 sm:text-3xl lg:text-5xl">
+        <h1 className="text-center text-7xl font-bold lg:text-6xl md:text-5xl sm:text-4xl">
           Welcome to HRNet
-        </h2>
-        <p className="text-center text-4xl sm:mt-1 sm:text-xl lg:text-2xl">
+        </h1>
+        <p className="text-center text-4xl lg:text-3xl md:text-2xl sm:text-xl">
           Your one-stop solution for managing employees.
         </p>
       </section>
