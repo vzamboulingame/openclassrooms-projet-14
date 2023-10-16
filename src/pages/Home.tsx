@@ -1,8 +1,8 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import bannerJpg from "../assets/banner.jpg";
-import bannerWebp from "../assets/banner.webp";
-import bannerSmallWebp from "../assets/banner-small.webp";
+import bannerJpg from "../assets/images/banner.jpg";
+import bannerWebp from "../assets/images/banner.webp";
+import bannerSmallWebp from "../assets/images/banner-small.webp";
 
 /**
  * Creates and renders the Home component.

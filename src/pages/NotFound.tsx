@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import errorJpg from "../assets/error.jpg";
-import errorWebp from "../assets/error.webp";
-import errorSmallWebp from "../assets/error-small.webp";
+import errorJpg from "../assets/images/error.jpg";
+import errorWebp from "../assets/images/error.webp";
+import errorSmallWebp from "../assets/images/error-small.webp";
 
 /**
  * Creates and renders the NotFound component.
