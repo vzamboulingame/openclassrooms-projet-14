@@ -25,7 +25,6 @@ export default function Home(): JSX.Element {
             className="h-full max-h-[60vh] w-full object-scale-down"
             src={bannerJpg}
             alt="Banner Image"
-            fetchPriority="high"
           />
         </picture>
 
@@ -33,9 +32,9 @@ export default function Home(): JSX.Element {
           Welcome to HRNet
         </h1>
 
-        <p className="text-center text-4xl lg:text-3xl md:text-2xl sm:text-xl">
+        <h2 className="text-center text-4xl lg:text-3xl md:text-2xl sm:text-xl">
           Your one-stop solution for managing employees.
-        </p>
+        </h2>
       </section>
       <Footer />
     </div>

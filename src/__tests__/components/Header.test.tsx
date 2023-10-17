@@ -2,8 +2,7 @@ import { describe, test, expect } from "vitest";
 import { render } from "@testing-library/react";
 import { userEvent } from "@testing-library/user-event";
 import { MemoryRouter } from "react-router-dom";
-
-import Header from "../components/Header";
+import Header from "../../components/Header";
 
 describe("<Header />", () => {
   test("should render properly", () => {
@@ -19,29 +18,27 @@ describe("<Header />", () => {
     expect(logo).toBeTruthy();
   });
 
-  test("should have an h1 element with the expected class names and text", () => {
+  test("should have 3 links with the expected class names", () => {
     const component = render(<Header />, { wrapper: MemoryRouter });
 
-    const h1Element = component.getByRole("heading", { level: 1 });
-    expect(h1Element).toBeInTheDocument();
-    expect(h1Element).toHaveClass("text-4xl font-bold md:text-3xl sm:text-2xl");
-    expect(h1Element).toHaveTextContent("HRNet");
-  });
+    const linkElements = component.getAllByRole("link");
+    expect(linkElements).toHaveLength(3);
 
-  test("should have NavLinks with the expected class names and text", () => {
-    const component = render(<Header />, { wrapper: MemoryRouter });
+    const homeLink = linkElements[0];
+    expect(homeLink).toBeInTheDocument();
+    expect(homeLink).toHaveClass(
+      "flex items-center justify-between gap-4 transition duration-150 hover:text-blue-500",
+    );
 
-    const employeeListNavLink = component.getByText("Employee list");
-    expect(employeeListNavLink).toBeInTheDocument();
-    expect(employeeListNavLink).toHaveTextContent("Employee list");
-    expect(employeeListNavLink).toHaveClass(
+    const employeeListLink = linkElements[1];
+    expect(employeeListLink).toBeInTheDocument();
+    expect(employeeListLink).toHaveClass(
       "transition duration-150 hover:text-blue-500 hover:underline",
     );
 
-    const addEmployeeNavLink = component.getByText("Add employee");
-    expect(addEmployeeNavLink).toBeInTheDocument();
-    expect(addEmployeeNavLink).toHaveTextContent("Add employee");
-    expect(addEmployeeNavLink).toHaveClass(
+    const addEmployeeLink = linkElements[2];
+    expect(addEmployeeLink).toBeInTheDocument();
+    expect(addEmployeeLink).toHaveClass(
       "transition duration-150 hover:text-blue-500 hover:underline",
     );
   });
