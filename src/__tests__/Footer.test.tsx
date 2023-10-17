@@ -4,13 +4,15 @@ import Footer from "../components/Footer";
 
 describe("<Footer />", () => {
   test("Footer renders properly", () => {
-    const wrapper = render(<Footer />);
-    expect(wrapper).toBeTruthy();
+    const component = render(<Footer />);
+
+    expect(component).toBeTruthy();
   });
 
   test("Footer contains a copyright notice", () => {
-    const wrapper = render(<Footer />);
-    const text = wrapper.getByText(/© \d{4} HRNet. All rights reserved./i);
+    const component = render(<Footer />);
+
+    const text = component.getByText(/© \d{4} HRNet. All rights reserved./i);
     expect(text).toBeInTheDocument();
   });
 });
