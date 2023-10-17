@@ -6,20 +6,20 @@ import { MemoryRouter } from "react-router-dom";
 import Header from "../components/Header";
 
 describe("<Header />", () => {
-  test("renders properly", () => {
+  test("should render properly", () => {
     const component = render(<Header />, { wrapper: MemoryRouter });
 
     expect(component).toBeTruthy();
   });
 
-  test("contains a svg logo", () => {
+  test("should have a svg logo", () => {
     const component = render(<Header />, { wrapper: MemoryRouter });
 
     const logo = component.container.querySelector("svg");
     expect(logo).toBeTruthy();
   });
 
-  test("contains an h1 element with the expected class names and text", () => {
+  test("should have an h1 element with the expected class names and text", () => {
     const component = render(<Header />, { wrapper: MemoryRouter });
 
     const h1Element = component.getByRole("heading", { level: 1 });
@@ -28,7 +28,7 @@ describe("<Header />", () => {
     expect(h1Element).toHaveTextContent("HRNet");
   });
 
-  test("contains NavLinks with the expected class names and text", () => {
+  test("should have NavLinks with the expected class names and text", () => {
     const component = render(<Header />, { wrapper: MemoryRouter });
 
     const employeeListNavLink = component.getByText("Employee list");
@@ -46,7 +46,7 @@ describe("<Header />", () => {
     );
   });
 
-  test("Employee List NavLink is rendered with the correct class when it is active", async () => {
+  test("should have an EmployeeList NavLink rendered with the correct class when it is active", async () => {
     const component = render(<Header />, { wrapper: MemoryRouter });
     const user = userEvent.setup();
 
@@ -59,7 +59,7 @@ describe("<Header />", () => {
     expect(addEmployeeNavLink).not.toHaveClass("text-blue-500");
   });
 
-  test("Add Employee NavLink is rendered with the correct class when it is active", async () => {
+  test("should have an AddEmployee NavLink rendered with the correct class when it is active", async () => {
     const component = render(<Header />, { wrapper: MemoryRouter });
     const user = userEvent.setup();
 
