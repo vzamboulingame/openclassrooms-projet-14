@@ -26,7 +26,6 @@ export default function NotFound(): JSX.Element {
             className="h-full max-h-[60vh] w-full object-scale-down"
             src={errorJpg}
             alt="404 Error Image"
-            fetchPriority="high"
           />
         </picture>
 
