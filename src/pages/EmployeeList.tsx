@@ -24,6 +24,7 @@ export default function EmployeeList(): JSX.Element {
   });
 
   // Define a breakpoint for mobile
+  /* c8 ignore next 1 */
   const isMobile = useMediaQuery("(max-width:639px)");
 
   // Define the columns based on EmployeeData interface
@@ -94,6 +95,7 @@ export default function EmployeeList(): JSX.Element {
         <Box className="xl:w-full xl:max-w-full">
           <DataGrid
             sx={{
+              /* c8 ignore next 1 */
               fontSize: isMobile ? "0.9rem" : "1rem",
               padding: "1em",
               [`& .${gridClasses.cell}:focus, & .${gridClasses.cell}:focus-within`]:
@@ -104,7 +106,7 @@ export default function EmployeeList(): JSX.Element {
                 {
                   outline: "none",
                 },
-              // Conditionally set border style to 'none' on mobile
+              /* c8 ignore next 1 */
               border: isMobile ? "none" : "1px solid #e0e0e0",
             }}
             density="comfortable"

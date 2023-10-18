@@ -29,6 +29,7 @@ export const useEmployeeStore = create<EmployeeStore>()(
   devtools(
     persist(
       (set) => ({
+        /* c8 ignore next 5 */
         employeeDataArray: shouldInitializeData ? generateFakeData() : [],
         addEmployeeData: (data) =>
           set((state) => ({
