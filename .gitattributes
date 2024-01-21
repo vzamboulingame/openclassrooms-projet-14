@@ -1,0 +1,2 @@
+# Exclude lighthouse folder content from project's language stats
+lighthouse/** linguist-vendored
