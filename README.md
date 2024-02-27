@@ -10,10 +10,6 @@
 ![react][react-badge]
 ![vscode][vscode-badge]
 
-## Demo
-
-https://hrnet-vza.netlify.app
-
 ## Description
 
 Vous travaillez pour le département technologique de Wealth Health, une grande société financière.
